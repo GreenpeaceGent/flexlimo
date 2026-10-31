@@ -1,0 +1,123 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="colorlib.com">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500" rel="stylesheet" />
+    <link href="css/main.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="s002">
+<div id="flex-form-par">
+      <form id="flex-form">
+        <fieldset>
+          <legend>Reserveer je Flex-limo</legend>
+        </fieldset>
+        <div class="inner-form">
+          <div class="input-field first-wrap">
+            <select data-trigger="" name="choices-single-defaul">
+              <option placeholder="">Annick De Ridder (Volvo XC 90)</option>
+              <option>Melissa Depraetere (Volvo EX40)</option>
+              <option>Zuhal Demir (Volvo EX90)</option>
+              <option>Hilde Crevits (BMW 750e)</option>
+              <option>Caroline Gennez (Volvo EX40)</option>
+              <option>Matthias Diependaele (Volvo EX90)</option>
+              <option>Ben Weyts (Audi A6 Avant E-tron)</option>
+              <option>Jo Brouns (Volvo XC90)</option>
+              <option>Cieltje Van Achter (Volkswagen ID.7)</option>
+            </select>          </div>
+          <div class="input-field second-wrap">
+            <div class="icon-wrap">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"></path>
+              </svg>
+            </div>
+            <input class="datepicker" id="depart" type="text" placeholder="29 Aug 2018" />
+          </div>
+          <div class="input-field third-wrap">
+
+            <select data-trigger="" name="choices-single-defaul">
+              <option placeholder="">9:00</option>
+              <option>10:00</option>
+              <option>11:00</option>
+              <option>12:00</option>
+              <option>13:00</option>
+              <option>14:00</option>
+              <option>15:00</option>
+              <option>16:00</option>
+              <option>17:00</option>
+              <option>18:00</option>
+              <option>19:00</option>
+            </select>
+          </div>
+          <div class="input-field fouth-wrap">
+               <select data-trigger="" name="choices-single-defaul">
+              <option placeholder="">10:00</option>
+              <option>11:00</option>
+              <option>12:00</option>
+              <option>13:00</option>
+              <option>14:00</option>
+              <option>15:00</option>
+              <option>16:00</option>
+              <option>17:00</option>
+              <option>18:00</option>
+              <option>19:00</option>
+            </select>
+          </div>
+          <div class="input-field fifth-wrap">
+            <button class="btn-search" type="button" onclick="flexSubmit()">Zoeken</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div style="display: none;" id="flex-answer">
+       <div class="answer-content">
+<h3>Helaas, deze auto is niet beschikbaar.</h3>
+<p>Gereserveerd tot: 31/12/2050.</p>
+<p>Op naam van: minister xxx</p>
+
+<p>U kan steeds via onderstaande link een mail sturen naar de minister met de vraag om de flexlimo te gebruiken of om te investeren in een goed openbaar vervoer.</p>
+
+<button>Klik hier om een mail te sturen.</button>
+
+<p>Transport blijft één van de grootste vervuilers in België en het beste antwoord is een goed, elektrisch openbaar vervoer.
+Openbaar vervoer is voor iedereen, niet alleen voor mensen die goed verdienen.
+Openbaar vervoer is een efficiënt gebruik van middelen en globaal een gigantische besparing om minder wagens te betalen.</p>
+
+<p>Dit is een initiatief van Greenpeace Gent.
+Wil je op de hoogte gebracht worden van toekomstige acties - online of op straat- registreer je dan via <a href="http://greenpeace.be">deze link.</a></p>
+</div></form></div></div>
+    <script src="js/extention/choices.js"></script>
+    <script src="js/extention/flatpickr.js"></script>
+    <script>
+      flatpickr(".datepicker",
+      {});
+
+    </script>
+    <script>
+      const choices = new Choices('[data-trigger]',
+      {
+        searchEnabled: false,
+        itemSelectText: '',
+      });
+ </script>
+    <script>
+
+
+
+function flexSubmit() {
+  
+  var formPar = document.getElementById("flex-form-par");
+  var answer = document.getElementById("flex-answer");
+
+    answer.style.display = "block";
+
+    formPar.style.display = "none";
+
+} 
+
+
+    </script>
+  </body>
+</html>
