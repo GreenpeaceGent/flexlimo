@@ -34,12 +34,12 @@
                 <path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"></path>
               </svg>
             </div>
-            <input class="datepicker" id="depart" type="text" placeholder="29 Aug 2018" />
+            <input class="datepicker" id="depart" type="text" placeholder="29 Nov 2026" />
           </div>
           <div class="input-field third-wrap">
 
             <select data-trigger="" name="choices-single-defaul">
-              <option placeholder="">9:00</option>
+              <option>9:00</option>
               <option>10:00</option>
               <option>11:00</option>
               <option>12:00</option>
@@ -54,7 +54,7 @@
           </div>
           <div class="input-field fouth-wrap">
                <select data-trigger="" name="choices-single-defaul">
-              <option placeholder="">10:00</option>
+              <option>10:00</option>
               <option>11:00</option>
               <option>12:00</option>
               <option>13:00</option>
@@ -111,13 +111,18 @@ Wil je op de hoogte gebracht worden van toekomstige acties - online of op straat
 
 var formPar = document.getElementById("flex-form-par");
 var answer = document.getElementById("flex-answer");
-var ministers = [{"naam":"Annick De Ridder","email":"kabinet.deridder@vlaanderen.be"},{"naam":"Ben Weyts", "email":"kabinet.weyts@vlaanderen.be"}];
+var ministers = [{"naam":"Annick De Ridder","email":"kabinet.deridder@vlaanderen.be"},{"naam":"Ben Weyts", "email":"kabinet.weyts@vlaanderen.be"},{"naam":"Caroline Gennez","email":"kabinet.gennez@vlaanderen.be"},{"naam":"Cieltje Van Achter","email":"kabinet.vanachter@vlaanderen.be"},{"naam":"Hilde Crevits","email":"kabinet.crevits@vlaanderen.be"},{"naam":"Jo Brouns","email":"kabinet.brouns@vlaanderen.be"},{"naam":"Matthias Diependaele ","email":"kabinet.diependaele@vlaanderen.be"},{"naam":"Melissa Depraetere","email":"kabinet.depraetere@vlaanderen.be"},{"naam":"Zuhal Demir","email":"kabinet.demir@vlaanderen.be"}];
 
 function flexSubmit() {
-  var minister = ministers[document.getElementById("minister").value];
+  var ministerId = document.getElementById("minister").value;
+  var minister = ministers[ministerId];
   document.getElementById("minister-name").innerHTML = minister.naam;
-
-  document.getElementById("flexmail").href = "mailto:"+ minister.email + ",kabinet.deridder@vlaanderen.be?cc=gent@greenpeace.be&subject=Reserveren%20flexlimo%2F%20Beter%20openbaar%20vervoer&body=Geachte%20minister%20"+ minister.naam +"%2C%0A%0AGraag%20had%20ik%20uw%20wagen%20gereseveerd%20om%20mijn%20afgeschafte%20bus%20te%20vervangen.%20Uw%20flexlimo%20blijkt%20echter%20nooit%20beschikbaar%20te%20zijn.%0A%0AEven%20serieus%3A%20ik%20verwacht%20niet%20dat%20u%20uw%20wagen%20ter%20beschikking%20stelt.%20Wel%20verwacht%20ik%20dat%20u%20er%20alles%20aan%20doet%20om%20een%20goed%20openbaar%20vervoer%20uit%20te%20bouwen%20in%20Vlaanderen.%20Er%20is%20reeds%20veel%20te%20veel%20bespaard%20op%20zulke%20belangrijke%20dienstverlening.%0A%0ATransport%20blijft%20%C3%A9%C3%A9n%20van%20de%20grootste%20bronnen%20van%20uitstoot%20in%20Belgi%C3%AB.%20Een%20antwoord%20hierop%20is%20investeren%20in%20goed%2C%20uitgebreid%20en%20elektrisch%20openbaar%20vervoer.%0AOpenbaar%20vervoer%20is%20voor%20iedereen%2C%20niet%20alleen%20voor%20mensen%20die%20goed%20verdienen.%0AOpenbaar%20vervoer%20is%20een%20effici%C3%ABnt%20gebruik%20van%20middelen%20en%20globaal%20een%20gigantische%20besparing%20om%20minder%20wagens%20te%20betalen.%0A%0AZie%20ook%3A%20http%3A%2F%2Fflexlimo.be%0A%0AMet%20vriendelijke%20groeten%2C%0A";
+ if(ministerId != 0){
+   document.getElementById("flexmail").href = "mailto:"+ minister.email + ",kabinet.deridder@vlaanderen.be?cc=gent@greenpeace.be&subject=Reserveren%20flexlimo%2F%20Beter%20openbaar%20vervoer&body=Geachte%20minister%20"+ minister.naam +"en%20minister%20Annick%20%De%20Ridder%2C%0A%0AGraag%20had%20ik%20uw%20wagen%20gereseveerd%20om%20mijn%20afgeschafte%20bus%20te%20vervangen.%20Uw%20flexlimo%20blijkt%20echter%20nooit%20beschikbaar%20te%20zijn.%0A%0AEven%20serieus%3A%20ik%20verwacht%20niet%20dat%20u%20uw%20wagen%20ter%20beschikking%20stelt.%20Wel%20verwacht%20ik%20dat%20u%20er%20alles%20aan%20doet%20om%20een%20goed%20openbaar%20vervoer%20uit%20te%20bouwen%20in%20Vlaanderen.%20Er%20is%20reeds%20veel%20te%20veel%20bespaard%20op%20zulke%20belangrijke%20dienstverlening.%0A%0ATransport%20blijft%20%C3%A9%C3%A9n%20van%20de%20grootste%20bronnen%20van%20uitstoot%20in%20Belgi%C3%AB.%20Een%20antwoord%20hierop%20is%20investeren%20in%20goed%2C%20uitgebreid%20en%20elektrisch%20openbaar%20vervoer.%0AOpenbaar%20vervoer%20is%20voor%20iedereen%2C%20niet%20alleen%20voor%20mensen%20die%20goed%20verdienen.%0AOpenbaar%20vervoer%20is%20een%20effici%C3%ABnt%20gebruik%20van%20middelen%20en%20globaal%20een%20gigantische%20besparing%20om%20minder%20wagens%20te%20betalen.%0A%0AZie%20ook%3A%20http%3A%2F%2Fflexlimo.be%0A%0AMet%20vriendelijke%20groeten%2C%0A";
+ }
+  if(ministerId = 0){
+   document.getElementById("flexmail").href = "mailto:kabinet.deridder@vlaanderen.be?cc=gent@greenpeace.be&subject=Reserveren%20flexlimo%2F%20Beter%20openbaar%20vervoer&body=Geachte%20minister%20Annick%20%De%20Ridder%2C%0A%0AGraag%20had%20ik%20uw%20wagen%20gereseveerd%20om%20mijn%20afgeschafte%20bus%20te%20vervangen.%20Uw%20flexlimo%20blijkt%20echter%20nooit%20beschikbaar%20te%20zijn.%0A%0AEven%20serieus%3A%20ik%20verwacht%20niet%20dat%20u%20uw%20wagen%20ter%20beschikking%20stelt.%20Wel%20verwacht%20ik%20dat%20u%20er%20alles%20aan%20doet%20om%20een%20goed%20openbaar%20vervoer%20uit%20te%20bouwen%20in%20Vlaanderen.%20Er%20is%20reeds%20veel%20te%20veel%20bespaard%20op%20zulke%20belangrijke%20dienstverlening.%0A%0ATransport%20blijft%20%C3%A9%C3%A9n%20van%20de%20grootste%20bronnen%20van%20uitstoot%20in%20Belgi%C3%AB.%20Een%20antwoord%20hierop%20is%20investeren%20in%20goed%2C%20uitgebreid%20en%20elektrisch%20openbaar%20vervoer.%0AOpenbaar%20vervoer%20is%20voor%20iedereen%2C%20niet%20alleen%20voor%20mensen%20die%20goed%20verdienen.%0AOpenbaar%20vervoer%20is%20een%20effici%C3%ABnt%20gebruik%20van%20middelen%20en%20globaal%20een%20gigantische%20besparing%20om%20minder%20wagens%20te%20betalen.%0A%0AZie%20ook%3A%20http%3A%2F%2Fflexlimo.be%0A%0AMet%20vriendelijke%20groeten%2C%0A";
+  }
    
   answer.style.display = "block";
   formPar.style.display = "none";
