@@ -17,13 +17,14 @@
         <div class="inner-form">
           <div class="input-field first-wrap">
             <select id="minister" data-trigger="" name="choices-single-defaul">
-              <option value ="Annick" placeholder="">Annick De Ridder (Volvo XC 90)</option>
+              <option value ="0">Annick De Ridder (Volvo XC 90)</option>
+              <option value="1">Ben Weyts (Audi A6 Avant E-tron)</option>
               <option>Melissa Depraetere (Volvo EX40)</option>
               <option>Zuhal Demir (Volvo EX90)</option>
               <option>Hilde Crevits (BMW 750e)</option>
               <option>Caroline Gennez (Volvo EX40)</option>
               <option>Matthias Diependaele (Volvo EX90)</option>
-              <option>Ben Weyts (Audi A6 Avant E-tron)</option>
+              
               <option>Jo Brouns (Volvo XC90)</option>
               <option>Cieltje Van Achter (Volkswagen ID.7)</option>
             </select>          </div>
@@ -79,17 +80,17 @@
 
 <p>Wil je toch gebruik maken van deze Flexlimo? Of vind je dat het hoog tijd wordt dat onze regering investeert in goed, betaalbaar en duuraam openbaar vervoer? Stuur dan via onderstaande link een mail naar de minister en laat je stem horen!</p>
 
-<button>Klik hier om een mail te sturen.</button>
+<a id="flexmail">Klik hier om een mail te sturen.</a>
 
 <p><b>Mobiliteit voor iedereen en niet enkel voor wie het zich kan veroorloven.</b></p>
 
-<p>Transport blijft één van de grootste bronnen van vervuiling in België. Een antwoord hierop is investeren in goed, uitgebreid en elektrisch openbaar vervoer.
+<p>Transport blijft één van de grootste bronnen van uitstoot in België. Een antwoord hierop is investeren in goed, uitgebreid en elektrisch openbaar vervoer.
 Openbaar vervoer is voor iedereen, niet alleen voor mensen die goed verdienen.
 Openbaar vervoer is een efficiënt gebruik van middelen en globaal een gigantische besparing om minder wagens te betalen.</p>
 
 <p>Dit is een initiatief van Greenpeace Gent.
 Wil je op de hoogte gebracht worden van toekomstige acties - online of op straat- registreer je dan via <a href="http://greenpeace.be">deze link.</a></p>
-         <p><a onclick="terug()">Terug naar Zoeken</a></p>
+         <p><a href="" onclick="terug()"> <<<Terug naar Zoeken</a></p>
 </div></form></div></div>
     <script src="js/extention/choices.js"></script>
     <script src="js/extention/flatpickr.js"></script>
@@ -110,14 +111,16 @@ Wil je op de hoogte gebracht worden van toekomstige acties - online of op straat
 
 var formPar = document.getElementById("flex-form-par");
 var answer = document.getElementById("flex-answer");
+var ministers = [{"naam":"Annick De Ridder","email":"kabinet.deridder@vlaanderen.be"},{"naam":"Ben Weyts", "email":"kabinet.weyts@vlaanderen.be"{];
 
 function flexSubmit() {
-  var minister = document.getElementById("minister").value;
-  document.getElementById("minister-name").innerHTML = minister;
+  var minsiter = ministers[document.getElementById("minister").value];
+  document.getElementById("minister-name").innerHTML = minister.naam;
+
+  document.getElementById("flexmail").href = "mailto:"+ minister.email + ",kabinet.deridder@vlaanderen.be?cc=gent@greenpeace.be&subject=Reserveren%20flexlimo%2F%20Beter%20openbaar%20vervoer&body=Geachte%20minister%20"+ minister.naam +"%2C%0A%0AGraag%20had%20ik%20uw%20wagen%20gereseveerd%20om%20mijn%20afgeschafte%20bus%20te%20vervangen.%20Uw%20flexlimo%20blijkt%20echter%20nooit%20beschikbaar%20te%20zijn.%0A%0AEven%20serieus%3A%20ik%20verwacht%20niet%20dat%20u%20uw%20wagen%20ter%20beschikking%20stelt.%20Wel%20verwacht%20ik%20dat%20u%20er%20alles%20aan%20doet%20om%20een%20goed%20openbaar%20vervoer%20uit%20te%20bouwen%20in%20Vlaanderen.%20Er%20is%20reeds%20veel%20te%20veel%20bespaard%20op%20zulke%20belangrijke%20dienstverlening.%0A%0ATransport%20blijft%20%C3%A9%C3%A9n%20van%20de%20grootste%20bronnen%20van%20uitstoot%20in%20Belgi%C3%AB.%20Een%20antwoord%20hierop%20is%20investeren%20in%20goed%2C%20uitgebreid%20en%20elektrisch%20openbaar%20vervoer.%0AOpenbaar%20vervoer%20is%20voor%20iedereen%2C%20niet%20alleen%20voor%20mensen%20die%20goed%20verdienen.%0AOpenbaar%20vervoer%20is%20een%20effici%C3%ABnt%20gebruik%20van%20middelen%20en%20globaal%20een%20gigantische%20besparing%20om%20minder%20wagens%20te%20betalen.%0A%0AZie%20ook%3A%20http%3A%2F%2Fflexlimo.be%0A%0AMet%20vriendelijke%20groeten%2C%0A"
    
   answer.style.display = "block";
   formPar.style.display = "none";
-  
 } 
 
 function terug() {  
