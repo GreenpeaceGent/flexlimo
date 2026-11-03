@@ -19,14 +19,13 @@
             <select id="minister" data-trigger="" name="choices-single-defaul">
               <option value ="0">Annick De Ridder (Volvo XC 90)</option>
               <option value="1">Ben Weyts (Audi A6 Avant E-tron)</option>
-              <option>Melissa Depraetere (Volvo EX40)</option>
-              <option>Zuhal Demir (Volvo EX90)</option>
-              <option>Hilde Crevits (BMW 750e)</option>
-              <option>Caroline Gennez (Volvo EX40)</option>
-              <option>Matthias Diependaele (Volvo EX90)</option>
-              
-              <option>Jo Brouns (Volvo XC90)</option>
-              <option>Cieltje Van Achter (Volkswagen ID.7)</option>
+              <option value="2">Caroline Gennez (Volvo EX40)</option>
+              <option value="3">Cieltje Van Achter (Volkswagen ID.7)</option>
+              <option value="4">Hilde Crevits (BMW 750e)</option>
+              <option value="5">Jo Brouns (Volvo XC90)</option>
+              <option value="6">Matthias Diependaele (Volvo EX90)</option>
+              <option value="7">Melissa Depraetere (Volvo EX40)</option>
+              <option value="8">Zuhal Demir (Volvo EX90)</option>              
             </select>          </div>
           <div class="input-field second-wrap">
             <div class="icon-wrap">
@@ -115,7 +114,6 @@ var ministers = [{"naam":"Annick De Ridder","email":"kabinet.deridder@vlaanderen
 
 function flexSubmit() {
   var ministerId = document.getElementById("minister").value;
-  console.log(ministerId);
   var minister = ministers[ministerId];
   document.getElementById("minister-name").innerHTML = minister.naam;
 
