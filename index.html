@@ -16,8 +16,8 @@
         </fieldset>
         <div class="inner-form">
           <div class="input-field first-wrap">
-            <select data-trigger="" name="choices-single-defaul">
-              <option placeholder="">Annick De Ridder (Volvo XC 90)</option>
+            <select id="minister" data-trigger="" name="choices-single-defaul">
+              <option value ="Annick" placeholder="">Annick De Ridder (Volvo XC 90)</option>
               <option>Melissa Depraetere (Volvo EX40)</option>
               <option>Zuhal Demir (Volvo EX90)</option>
               <option>Hilde Crevits (BMW 750e)</option>
@@ -74,19 +74,22 @@
     <div style="display: none;" id="flex-answer">
        <div class="answer-content">
 <h3>Helaas, deze auto is niet beschikbaar.</h3>
-<p>Gereserveerd tot: 31/12/2050.</p>
-<p>Op naam van: minister xxx</p>
+<p>Gereserveerd tot: 31/06/2029.</p>
+<p>Op naam van: minister <span id="minister-name"></span></p>
 
-<p>U kan steeds via onderstaande link een mail sturen naar de minister met de vraag om de flexlimo te gebruiken of om te investeren in een goed openbaar vervoer.</p>
+<p>Wil je toch gebruik maken van deze Flexlimo? Of vind je dat het hoog tijd wordt dat onze regering investeert in goed, betaalbaar en duuraam openbaar vervoer? Stuur dan via onderstaande link een mail naar de minister en laat je stem horen!</p>
 
 <button>Klik hier om een mail te sturen.</button>
 
-<p>Transport blijft één van de grootste vervuilers in België en het beste antwoord is een goed, elektrisch openbaar vervoer.
+<p><b>Mobiliteit voor iedereen en niet enkel voor wie het zich kan veroorloven.</b></p>
+
+<p>Transport blijft één van de grootste bronnen van vervuiling in België. Een antwoord hierop is investeren in goed, uitgebreid en elektrisch openbaar vervoer.
 Openbaar vervoer is voor iedereen, niet alleen voor mensen die goed verdienen.
 Openbaar vervoer is een efficiënt gebruik van middelen en globaal een gigantische besparing om minder wagens te betalen.</p>
 
 <p>Dit is een initiatief van Greenpeace Gent.
 Wil je op de hoogte gebracht worden van toekomstige acties - online of op straat- registreer je dan via <a href="http://greenpeace.be">deze link.</a></p>
+         <p><a onclick="terug()">Terug naar Zoeken</a></p>
 </div></form></div></div>
     <script src="js/extention/choices.js"></script>
     <script src="js/extention/flatpickr.js"></script>
@@ -105,16 +108,22 @@ Wil je op de hoogte gebracht worden van toekomstige acties - online of op straat
     <script>
 
 
+var formPar = document.getElementById("flex-form-par");
+var answer = document.getElementById("flex-answer");
 
 function flexSubmit() {
+  var minister = document.getElementById("minister").value;
+  document.getElementById("minister-name").innerHTML = minister;
+   
+  answer.style.display = "block";
+  formPar.style.display = "none";
   
-  var formPar = document.getElementById("flex-form-par");
-  var answer = document.getElementById("flex-answer");
+} 
 
-    answer.style.display = "block";
-
-    formPar.style.display = "none";
-
+function terug() {  
+  answer.style.display = "none";
+  formPar.style.display = "block";
+  
 } 
 
 
